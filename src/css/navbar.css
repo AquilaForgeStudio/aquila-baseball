@@ -1,0 +1,286 @@
+/* src/css/navbar.css */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #ffffff; /* 라이트 테마 */
+    border-bottom: 1px solid #e5e7eb;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.brand-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-logo {
+    height: 32px;
+    object-fit: contain;
+}
+
+.desktop-only-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-txt-btn {
+    background: none;
+    border: none;
+    color: #4b5563;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    padding: 24px 4px;
+    transition: color 0.2s ease;
+}
+
+.nav-txt-btn:hover {
+    color: #f97316; /* 브랜드 오렌지 컬러 */
+}
+
+.cta-install-btn {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    color: #f97316;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.cta-install-btn:hover {
+    background: #f97316;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* 라이트 테마 호버 드롭다운 시스템 (틈새 방지 & 부드러운 애니메이션) */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+    margin-bottom: -15px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff !important;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 8px 0;
+    min-width: 160px;
+    list-style: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    z-index: 1001;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+}
+
+.dropdown-menu.align-right {
+    left: auto;
+    right: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 16px;
+    color: #4b5563 !important;
+    font-size: 0.85rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+    color: #f97316 !important;
+    background-color: #fff7ed !important;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 6px 0;
+}
+
+.studio-link, .studio-accent {
+    color: #f97316 !important;
+    font-weight: 600 !important;
+}
+
+.support-link {
+    color: #f97316 !important;
+}
+
+/* 햄버거 버튼 */
+.hamburger-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+}
+
+/* 모바일 사이드바 */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: #ffffff;
+    border-left: 1px solid #e5e7eb;
+    z-index: 2000;
+    transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 24px;
+}
+
+.sidebar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.nav-logo-sm {
+    height: 28px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #4b5563;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+}
+
+.s-link {
+    display: block;
+    color: #1f2937;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 0;
+}
+
+.s-link.sub {
+    font-size: 0.9rem;
+    color: #4b5563 !important;
+    padding: 8px 16px;
+}
+
+.nav-section {
+    width: 100%;
+}
+
+.accordion-trigger {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: inherit;
+    color: #1f2937;
+}
+
+.chevron-icon {
+    transition: transform 0.25s ease;
+}
+
+.accordion-trigger.active .chevron-icon {
+    transform: rotate(90deg);
+}
+
+.accordion-content {
+    display: flex !important;
+    overflow: hidden;
+    max-height: 0;
+    flex-direction: column;
+    background: #f9fafb;
+    border-radius: 8px;
+    transition: max-height 0.35s ease, padding 0.3s ease;
+}
+
+.accordion-content.active {
+    padding: 4px 0;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 1500;
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    .desktop-only {
+        display: none !important;
+    }
+    .hamburger-btn {
+        display: flex;
+    }
+}
